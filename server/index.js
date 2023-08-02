@@ -8,13 +8,7 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors(
-    {
-        origin: ["https://easy-share-hub-app-frontend-58rt79wg3-abhaysingh291.vercel.app"],
-        methods: ["POST", "GET"],
-        credentials: true
-    }
-));
+app.use(cors());
 
 
 app.use(express.urlencoded({ extended: true }));
