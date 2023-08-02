@@ -8,13 +8,13 @@ dotenv.config();
 
 const app = express();
 
-
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://easy-share-hub-app-frontend-58rt79wg3-abhaysingh291.vercel.app');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  next();
-});
+app.use(cors(
+    {
+        origin: ["https://easy-share-hub-app-frontend-58rt79wg3-abhaysingh291.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
 
 
 app.use(express.urlencoded({ extended: true }));
